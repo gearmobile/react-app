@@ -1,0 +1,28 @@
+name: Local Assistant
+version: 0.0.1
+schema: v1
+models:
+  - provider: ollama
+    model: deepseek-r1
+    # apiKey: ${{ secrets.ANTHROPIC_API_KEY }}
+    name: deepseek r1
+    # roles:
+    #   - chat
+    #   - edit
+    #   - autocomplete
+  - provider: ollama
+    model: qwen2.5-coder
+    # apiKey: ${{ secrets.ANTHROPIC_API_KEY }}
+    name: qwen 2.5 coder
+    roles:
+      - chat
+      - edit
+      - autocomplete
+context:
+  - provider: code
+  - provider: docs
+  - provider: diff
+  - provider: terminal
+  - provider: problems
+  - provider: folder
+  - provider: codebase
